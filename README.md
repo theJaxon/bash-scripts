@@ -26,3 +26,23 @@ When porting roles to run on different platforms one relies on facts like:
 ```
 So whenever the playbook runs it gathers the facts and only the files matching those facts get included.
 This script generates the desired files to be used in the include_vars and include_tasks section.
+
+#### Example:
+```bash
+./ansible_family.sh
+Enter role name: chrome
+# mkdir: created directory 'chrome_family'
+# mkdir: created directory 'vars'
+# mkdir: created directory 'tasks' 
+
+ls -R chrome_family
+
+chrome_family/:
+tasks  vars
+
+chrome_family/tasks:
+chrome-Archlinux.yml  chrome-Debian.yml  chrome-RedHat.yml  chrome-Windows.yml
+
+chrome_family/vars:
+Archlinux.yml  Debian.yml  RedHat.yml  Windows.yml
+```
