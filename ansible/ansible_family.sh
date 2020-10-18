@@ -13,5 +13,5 @@ for os in "${supported_os[@]}"
 do 
 task_name="${role_name}-${os}"
 var_name="$os"
-touch "tasks/${task_name}" "vars/${var_name}"
+touch "tasks/${task_name}.yml" "vars/${var_name}.yml"
 done
