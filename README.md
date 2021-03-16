@@ -1,6 +1,6 @@
 # BashScripts
  
- [![Bash Shell](https://badges.frapsoft.com/bash/v1/bash-150x25.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+ ![Bash Shell](https://img.shields.io/badge/-bash-4EAA25?style=for-the-badge&logo=GNU%20Bash&logoColor=white)
  
 My collection of bash scripts.
 
@@ -46,3 +46,8 @@ chrome-Archlinux.yml  chrome-Debian.yml  chrome-RedHat.yml  chrome-Windows.yml
 chrome_family/vars:
 Archlinux.yml  Debian.yml  RedHat.yml  Windows.yml
 ```
+
+---
+
+### AWS Directory:
+- Contains user_data scripts

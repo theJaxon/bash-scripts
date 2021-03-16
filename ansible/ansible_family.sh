@@ -8,7 +8,7 @@ mkdir -v "${role_name}_family" && cd $_
 # Create tasks and vars directory 
 mkdir -v vars tasks 
 
-supported_os=(Archlinux Debian RedHat Windows)
+supported_os=(Archlinux Debian RedHat Windows Darwin)
 for os in "${supported_os[@]}"
 do 
 task_name="${role_name}-${os}"
