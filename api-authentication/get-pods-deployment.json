@@ -1,0 +1,44 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "apps/v1",
+  "metadata": {
+    "name": "get-pods-deployment",
+    "creationTimestamp": null,
+    "labels": {
+      "app": "get-pods-deployment"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "get-pods-deployment"
+      }
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app": "get-pods-deployment"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "curl",
+            "image": "curlimages/curl",
+            "command": [
+              "sh",
+              "-c",
+              "while true; do curl -s --header \"Authorization: Bearer $(cat /var/run/secrets/kubernetes.io/serviceaccount/token)\" --cacert /var/run/secrets/kubernetes.io/serviceaccount/ca.crt https://kubernetes/api/v1/namespaces/default/pods; sleep 10; done;"
+            ],
+            "resources": {}
+          }
+        ],
+        "serviceAccountName": "robot"
+      }
+    },
+    "strategy": {}
+  },
+  "status": {}
+}
